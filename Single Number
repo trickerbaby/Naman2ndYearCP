@@ -1,0 +1,37 @@
+#1 LEETCODE PROBLEM :- Single Number
+
+Aproaches:- 
+1) Using Nested Loop , TC-> O(NxN)
+2) Using Sorting , TC -> O(NlogN)
+3) Using XOR , TC -> O(N)
+
+Intuition ?
+
+Xor of all elements will cancel out all the pairing elements to 0 and will give the non pairing
+element as the answer
+
+Code for optimal Solution :- 
+///////////////////////////////////////////
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        
+        sort(nums.begin(),nums.end());
+
+        for(int i = 0;i<nums.size();i+=2)
+        {
+           if(i==nums.size()-1 || nums[i]!=nums[i+1])
+           {
+               return nums[i];
+           }
+           
+
+        }
+
+        return 0;
+
+    }
+};
+/////////////////////////////////////
+
+
